@@ -1,0 +1,1152 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Meydiana Hulwa | Personal Portfolio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --navy: #101c35;
+  --blue: #23395b;
+  --gold: #c6ad7a;
+  --ivory: #f7f4ed;
+  --cream: #ede5d8;
+  --white: #ffffff;
+  --text: #343946;
+  --muted: #697180;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
+}
+
+body {
+  background: var(--ivory);
+  color: var(--text);
+  font-family: "DM Sans", sans-serif;
+  line-height: 1.7;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button, input, textarea {
+  font: inherit;
+}
+
+.container {
+  width: min(1180px, 90%);
+  margin: auto;
+}
+
+.section {
+  padding: 100px 0;
+}
+
+.eyebrow {
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  margin-bottom: 18px;
+}
+
+.heading {
+  color: var(--navy);
+  font: 500 clamp(42px, 6vw, 70px)/1.05
+        "Cormorant Garamond", serif;
+  margin-bottom: 22px;
+}
+
+.heading em {
+  color: var(--gold);
+}
+
+.description {
+  color: var(--muted);
+  max-width: 600px;
+}
+
+.button {
+  display: inline-block;
+  padding: 14px 23px;
+  border: 1px solid var(--navy);
+  background: var(--navy);
+  color: var(--ivory);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  transition: .3s;
+  cursor: pointer;
+}
+
+.button:hover {
+  background: var(--gold);
+  border-color: var(--gold);
+  color: var(--navy);
+  transform: translateY(-3px);
+}
+
+.button-outline {
+  background: transparent;
+  color: var(--navy);
+}
+
+/* NAVIGATION */
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(247, 244, 237, .96);
+  border-bottom: 1px solid rgba(16, 28, 53, .12);
+  backdrop-filter: blur(12px);
+}
+
+.navbar {
+  min-height: 78px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--navy);
+  font: 600 21px "Cormorant Garamond", serif;
+}
+
+.brand-icon {
+  width: 43px;
+  height: 43px;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--gold);
+  font-size: 20px;
+}
+
+.brand small {
+  display: block;
+  color: var(--muted);
+  font: 700 9px "DM Sans", sans-serif;
+  letter-spacing: 2px;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 23px;
+}
+
+.nav-links a {
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: .3s;
+}
+
+.nav-links a:hover {
+  color: var(--gold);
+}
+
+.menu-button {
+  display: none;
+  background: transparent;
+  border: 1px solid var(--gold);
+  padding: 9px 13px;
+  color: var(--navy);
+  cursor: pointer;
+}
+
+/* HERO */
+
+.hero {
+  min-height: 690px;
+  display: flex;
+  align-items: center;
+  padding: 75px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  border: 1px solid rgba(198, 173, 122, .45);
+  border-radius: 50%;
+  right: -180px;
+  top: -180px;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.1fr .9fr;
+  align-items: center;
+  gap: 80px;
+}
+
+.hero h1 {
+  color: var(--navy);
+  font: 500 clamp(65px, 9vw, 120px)/.85
+        "Cormorant Garamond", serif;
+  letter-spacing: -4px;
+}
+
+.hero h1 span {
+  display: block;
+}
+
+.hero h1 span:last-child {
+  color: var(--blue);
+  font-style: italic;
+  margin-top: 14px;
+}
+
+.hero-subtitle {
+  color: var(--gold);
+  font: italic 25px "Cormorant Garamond", serif;
+  margin: 28px 0 15px;
+}
+
+.hero-description {
+  color: var(--muted);
+  max-width: 470px;
+}
+
+.hero-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 30px;
+}
+
+.portrait {
+  position: relative;
+  padding: 18px;
+  border: 1px solid var(--gold);
+  background: var(--cream);
+}
+
+.portrait-inner {
+  min-height: 440px;
+  background:
+    radial-gradient(circle, transparent 30%, rgba(198,173,122,.15)),
+    linear-gradient(145deg, #ded5c6, #f7f4ed, #d8cdbb);
+  border: 1px solid rgba(16, 28, 53, .15);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 35px 20px;
+  text-align: center;
+}
+
+.portrait-inner .monogram {
+  color: var(--navy);
+  font: 500 115px "Cormorant Garamond", serif;
+  letter-spacing: -12px;
+}
+
+.portrait-inner h2 {
+  color: var(--navy);
+  font: 500 30px "Cormorant Garamond", serif;
+}
+
+.portrait-inner p {
+  color: var(--muted);
+  font-size: 10px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+.stamp {
+  position: absolute;
+  bottom: -18px;
+  right: -18px;
+  width: 85px;
+  height: 85px;
+  border: 1px solid var(--gold);
+  border-radius: 50%;
+  background: var(--navy);
+  color: var(--ivory);
+  display: grid;
+  place-items: center;
+  text-align: center;
+  font: italic 20px "Cormorant Garamond", serif;
+}
+
+/* ABOUT */
+
+.about {
+  background: var(--white);
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: .8fr 1.2fr;
+  gap: 75px;
+  align-items: start;
+}
+
+.about-quote {
+  padding: 40px;
+  background: var(--ivory);
+  border-left: 3px solid var(--gold);
+  color: var(--navy);
+  font: 500 30px/1.4 "Cormorant Garamond", serif;
+}
+
+.about-text {
+  color: var(--muted);
+  margin-bottom: 25px;
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.info-card {
+  padding: 20px;
+  background: var(--ivory);
+  border: 1px solid rgba(16, 28, 53, .1);
+}
+
+.info-card small {
+  display: block;
+  color: var(--muted);
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.info-card strong {
+  display: block;
+  color: var(--navy);
+  font: 500 21px "Cormorant Garamond", serif;
+  margin-top: 5px;
+}
+
+/* INTERESTS */
+
+.interests {
+  background: var(--ivory);
+}
+
+.section-intro {
+  margin-bottom: 45px;
+}
+
+.interest-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.interest-card {
+  padding: 30px;
+  min-height: 220px;
+  background: var(--white);
+  border: 1px solid rgba(16, 28, 53, .12);
+  transition: .3s;
+}
+
+.interest-card:hover {
+  transform: translateY(-7px);
+  border-color: var(--gold);
+  box-shadow: 0 15px 35px rgba(16, 28, 53, .08);
+}
+
+.interest-icon {
+  color: var(--gold);
+  font: 35px "Cormorant Garamond", serif;
+  margin-bottom: 20px;
+}
+
+.interest-card h3 {
+  color: var(--navy);
+  font: 500 28px "Cormorant Garamond", serif;
+  margin-bottom: 8px;
+}
+
+.interest-card p {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+/* PROJECTS */
+
+.projects {
+  background: var(--navy);
+}
+
+.projects .heading {
+  color: var(--ivory);
+}
+
+.projects .description {
+  color: #c6cbd4;
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.project-card {
+  background: var(--ivory);
+  border: 1px solid var(--gold);
+  transition: .3s;
+}
+
+.project-card:hover {
+  transform: translateY(-7px);
+}
+
+.project-art {
+  height: 220px;
+  display: grid;
+  place-items: center;
+  position: relative;
+  overflow: hidden;
+  background: var(--cream);
+}
+
+.project-art::before,
+.project-art::after {
+  content: "";
+  position: absolute;
+  border: 1px solid rgba(16, 28, 53, .25);
+  border-radius: 50%;
+}
+
+.project-art::before {
+  width: 175px;
+  height: 175px;
+}
+
+.project-art::after {
+  width: 135px;
+  height: 135px;
+}
+
+.project-art span {
+  z-index: 1;
+  color: var(--navy);
+  font: 70px "Cormorant Garamond", serif;
+}
+
+.project-content {
+  padding: 25px;
+}
+
+.project-content small {
+  color: var(--gold);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.project-content h3 {
+  color: var(--navy);
+  font: 500 28px "Cormorant Garamond", serif;
+  margin: 12px 0;
+}
+
+.project-content p {
+  color: var(--muted);
+  font-size: 13px;
+  margin-bottom: 20px;
+}
+
+.project-detail {
+  padding: 0;
+  border: 0;
+  border-bottom: 1px solid var(--gold);
+  background: transparent;
+  color: var(--navy);
+  cursor: pointer;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  padding-bottom: 5px;
+}
+
+/* EDUCATION */
+
+.education {
+  background: var(--white);
+}
+
+.education-grid {
+  display: grid;
+  grid-template-columns: .8fr 1.2fr;
+  gap: 70px;
+}
+
+.timeline {
+  border-left: 1px solid var(--gold);
+  padding-left: 30px;
+}
+
+.timeline-item {
+  position: relative;
+  padding-bottom: 35px;
+}
+
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  left: -36px;
+  top: 8px;
+  width: 10px;
+  height: 10px;
+  border: 1px solid var(--gold);
+  border-radius: 50%;
+  background: var(--white);
+}
+
+.timeline-item small {
+  color: var(--gold);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.timeline-item h3 {
+  color: var(--navy);
+  font: 500 27px "Cormorant Garamond", serif;
+  margin: 7px 0;
+}
+
+.timeline-item p {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+/* JOURNEY */
+
+.journey {
+  background: var(--cream);
+}
+
+.journey-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border-top: 1px solid var(--gold);
+  border-bottom: 1px solid var(--gold);
+}
+
+.journey-card {
+  padding: 35px;
+  border-right: 1px solid rgba(16, 28, 53, .15);
+}
+
+.journey-card:last-child {
+  border-right: 0;
+}
+
+.journey-number {
+  color: var(--gold);
+  font: 60px "Cormorant Garamond", serif;
+}
+
+.journey-card h3 {
+  color: var(--navy);
+  font: 500 32px "Cormorant Garamond", serif;
+  margin: 10px 0;
+}
+
+.journey-card p {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+/* VALUES */
+
+.values {
+  background: var(--ivory);
+}
+
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+}
+
+.value-card {
+  padding: 27px 22px;
+  background: var(--white);
+  border-top: 2px solid var(--gold);
+}
+
+.value-card span {
+  color: var(--gold);
+  font: 25px "Cormorant Garamond", serif;
+}
+
+.value-card h3 {
+  color: var(--navy);
+  font: 500 25px "Cormorant Garamond", serif;
+  margin: 20px 0 8px;
+}
+
+.value-card p {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+/* QUOTE */
+
+.quote-section {
+  padding: 100px 20px;
+  text-align: center;
+  background: var(--navy);
+  color: var(--ivory);
+}
+
+.quote-mark {
+  color: var(--gold);
+  font: 80px "Cormorant Garamond", serif;
+}
+
+.quote-section blockquote {
+  max-width: 850px;
+  margin: 20px auto;
+  font: 500 clamp(35px, 5vw, 60px)/1.1
+        "Cormorant Garamond", serif;
+}
+
+.quote-section p {
+  color: #c6cbd4;
+  font-size: 13px;
+}
+
+/* CONTACT */
+
+.contact {
+  background: var(--white);
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: .8fr 1.2fr;
+  gap: 70px;
+}
+
+.contact-description {
+  color: var(--muted);
+}
+
+.contact-form {
+  padding: 35px;
+  background: var(--ivory);
+  border: 1px solid rgba(16, 28, 53, .12);
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  color: var(--navy);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-bottom: 8px;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 13px;
+  border: 1px solid #d6d5d0;
+  background: var(--white);
+  color: var(--text);
+  outline: none;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: var(--gold);
+}
+
+.form-group textarea {
+  min-height: 140px;
+  resize: vertical;
+}
+
+.form-status {
+  color: var(--navy);
+  font-size: 13px;
+  margin-top: 15px;
+}
+
+/* FOOTER */
+
+footer {
+  background: var(--navy);
+  color: var(--ivory);
+  padding: 50px 0 25px;
+}
+
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  padding-bottom: 35px;
+  border-bottom: 1px solid rgba(198, 173, 122, .3);
+}
+
+.footer-title {
+  font: 500 30px "Cormorant Garamond", serif;
+}
+
+.footer-text {
+  max-width: 350px;
+  color: #c6cbd4;
+  font-size: 13px;
+  margin-top: 10px;
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 17px;
+}
+
+.footer-links a {
+  color: #d2d5dc;
+  font-size: 12px;
+}
+
+.footer-links a:hover {
+  color: var(--gold);
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  padding-top: 22px;
+  color: #c6cbd4;
+  font-size: 11px;
+}
+
+/* POPUP */
+
+.modal {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  display: none;
+  place-items: center;
+  padding: 20px;
+  background: rgba(8, 15, 29, .75);
+}
+
+.modal.show {
+  display: grid;
+}
+
+.modal-box {
+  width: min(500px, 100%);
+  background: var(--ivory);
+  border: 1px solid var(--gold);
+  padding: 35px;
+  position: relative;
+}
+
+.modal-box h2 {
+  color: var(--navy);
+  font: 500 36px "Cormorant Garamond", serif;
+  margin-bottom: 15px;
+}
+
+.modal-box p {
+  color: var(--muted);
+  margin-bottom: 20px;
+}
+
+.modal-close {
+  position: absolute;
+  right: 12px;
+  top: 10px;
+  background: transparent;
+  border: 0;
+  font-size: 25px;
+  cursor: pointer;
+  color: var(--navy);
+}
+
+/* ANIMATION */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: .7s;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 900px) {
+  .nav-links {
+    gap: 12px;
+  }
+
+  .nav-links a {
+    font-size: 9px;
+  }
+
+  .hero-grid {
+    gap: 35px;
+  }
+
+  .about-grid,
+  .education-grid,
+  .contact-grid {
+    gap: 35px;
+  }
+
+  .values-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 700px) {
+  .section {
+    padding: 75px 0;
+  }
+
+  .menu-button {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 78px;
+    left: 0;
+    right: 0;
+    padding: 20px 5%;
+    background: var(--ivory);
+    border-bottom: 1px solid var(--gold);
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .nav-links a {
+    font-size: 12px;
+    padding: 8px 0;
+  }
+
+  .hero-grid,
+  .about-grid,
+  .education-grid,
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero {
+    padding: 65px 0;
+  }
+
+  .hero h1 {
+    font-size: clamp(65px, 15vw, 95px);
+  }
+
+  .portrait {
+    max-width: 400px;
+    margin: auto;
+    width: 100%;
+  }
+
+  .interest-grid,
+  .project-grid,
+  .journey-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .journey-card {
+    border-right: 0;
+    border-bottom: 1px solid rgba(16, 28, 53, .15);
+  }
+
+  .journey-card:last-child {
+    border-bottom: 0;
+  }
+
+  .footer-top {
+    flex-direction: column;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 450px) {
+  .info-grid,
+  .values-grid,
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .about-quote {
+    padding: 28px;
+    font-size: 25px;
+  }
+
+  .contact-form {
+    padding: 22px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    transition-duration: .01ms !important;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="container navbar">
+    <a href="#home" class="brand">
+      <span class="brand-icon">MH.</span>
+      <span>Meydiana Hulwa
+        <small>PERSONAL PORTFOLIO</small>
+      </span>
+    </a>
+
+    <button class="menu-button" id="menuButton"
+      aria-expanded="false" aria-controls="navLinks">
+      ☰ Menu
+    </button>
+
+    <nav class="nav-links" id="navLinks">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#interests">Interests</a>
+      <a href="#projects">Projects</a>
+      <a href="#education">Education</a>
+      <a href="#journey">Journey</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<!-- HERO SECTION -->
+<section class="hero" id="home">
+  <div class="container hero-grid">
+    <div>
+      <p class="eyebrow">Welcome to my personal space</p>
+
+      <h1>
+        <span>Meydiana</span>
+        <span>Hulwa.</span>
+      </h1>
+
+      <p class="hero-subtitle">
+        Elegance in Every Detail.
+      </p>
+
+      <p class="hero-description">
+        Welcome to my personal portfolio. A place to share my
+        interests, learning journey, creative ideas, and the
+        experiences that help me grow.
+      </p>
+
+      <div class="hero-buttons">
+        <a href="#about" class="button">Discover More ↗</a>
+        <a href="#projects" class="button button-outline">
+          Explore Projects →
+        </a>
+      </div>
+    </div>
+
+    <div class="portrait">
+      <div class="portrait-inner">
+        <p class="eyebrow">A Personal Signature</p>
+        <span class="monogram">MH</span>
+        <div>
+          <h2>Meydiana Hulwa</h2>
+          <p>Elegance · Curiosity · Growth</p>
+        </div>
+      </div>
+      <div class="stamp">Est.<br>2026</div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT SECTION -->
+<section class="section about" id="about">
+  <div class="container about-grid">
+    <div>
+      <p class="eyebrow">01 — Introduction</p>
+      <div class="about-quote">
+        “A closer look at the person behind the ideas,
+        interests, and journey.”
+      </div>
+    </div>
+
+    <div>
+      <p class="eyebrow">Get to know me</p>
+      <h2 class="heading">About <em>Me</em></h2>
+
+      <p class="about-text">
+        Hello, I'm Meydiana Hulwa. This website represents
+        my personal interests, learning experiences, and
+        creative journey. I believe that growth comes from
+        curiosity, consistency, and the willingness to keep
+        learning.
+      </p>
+
+      <div class="info-grid">
+        <div class="info-card">
+          <small>Full Name</small>
+          <strong>Meydiana Hulwa</strong>
+        </div>
+
+        <div class="info-card">
+          <small>Status</small>
+          <strong>Student</strong>
+        </div>
+
+        <div class="info-card">
+          <small>Interests</small>
+          <strong>Creativity</strong>
+        </div>
+
+        <div class="info-card">
+          <small>Focus</small>
+          <strong>Learning & Growth</strong>
+        </div>
+
+        <div class="info-card">
+          <small>Personality</small>
+          <strong>Curious</strong>
+        </div>
+
+        <div class="info-card">
+          <small>Motto</small>
+          <strong>Grow with Purpose</strong>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INTERESTS SECTION -->
+<section class="section interests" id="interests">
+  <div class="container">
+    <div class="section-intro">
+      <p class="eyebrow">02 — What inspires me</p>
+      <h2 class="heading">Areas of <em>Interest</em></h2>
+      <p class="description">
+        A collection of interests that encourage me to
+        discover new things and develop my abilities.
+      </p>
+    </div>
+
+    <div class="interest-grid">
+      <article class="interest-card">
+        <div class="interest-icon">⌘</div>
+        <h3>Technology</h3>
+        <p>
+          Exploring digital tools, websites, and the
+          development of technology.
+        </p>
+      </article>
+
+      <article class="interest-card">
+        <div class="interest-icon">✳</div>
+        <h3>Creativity</h3>
+        <p>
+          Developing ideas and finding interesting ways
+          to express thoughts.
+        </p>
+      </article>
+
+      <article class="interest-card">
+        <div class="interest-icon">◇</div>
+        <h3>Design</h3>
+        <p>
+          Appreciating visual balance, colors,
+          typography, and thoughtful layouts.
+        </p>
+      </article>
+
+      <article class="interest-card">
+        <div class="interest-icon">⌁</div>
+        <h3>Learning</h3>
+        <p>
+          Building knowledge and understanding new
+          things through practice.
+        </p>
+      </article>
+
+      <article class="interest-card">
+        <div class="interest-icon">↗</div>
+        <h3>Communication</h3>
+        <p>
+          Learning to communicate clearly and work
+          together with different people.
+        </p>
+      </article>
+
+      <article class="interest-card">
+        <div class="interest-icon">✧</div>
+        <h3>Personal Growth</h3>
+        <p>
+          Improving skills and learning fro
